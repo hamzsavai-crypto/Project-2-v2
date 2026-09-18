@@ -1,10 +1,13 @@
 # Nested clones — each repo keeps its own git history
 repos/
+ANIMATe/
+PhysicsSims/
 
 node_modules/
 web/.next/
 web/out/
 server/data/
+VPL/dist/
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm
