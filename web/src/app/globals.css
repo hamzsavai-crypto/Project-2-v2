@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0c0a08;
+  --parchment: #f3ead8;
+  --paprika: #d85a1a;
+  --brass: #e7c27d;
+  --sage: #2f6f62;
+  --clay: #1a1612;
+  --smoke: #8a7f70;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --font-sans: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--ink);
+  color: var(--parchment);
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--paprika);
+  color: var(--parchment);
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243, 234, 216, 0.22), transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.serif-italic {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.ink-card {
+  background: rgba(26, 22, 18, 0.78);
+  border: 1px solid rgba(243, 234, 216, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.ink-card:hover {
+  border-color: rgba(216, 90, 26, 0.45);
+}
+
+pre,
+code {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3229;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0a08;
+}

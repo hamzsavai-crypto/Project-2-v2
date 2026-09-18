@@ -1,0 +1,15 @@
+{
+  "name": "mise",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mise — nineteen open-source ingredients, one kitchen.",
+  "scripts": {
+    "dev": "concurrently -n api,web -c \"papaya,#efe8dc\" \"npm run dev --prefix server\" \"npm run dev --prefix web\"",
+    "dev:api": "npm run dev --prefix server",
+    "dev:web": "npm run dev --prefix web",
+    "install:all": "npm install --prefix server && npm install --prefix web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

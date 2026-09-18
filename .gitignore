@@ -1,2 +1,11 @@
 # Nested clones — each repo keeps its own git history
 repos/
+
+node_modules/
+web/.next/
+web/out/
+server/data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.DS_Store
